@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Stream Goods | Global Dropshipping Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            900: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-900 text-slate-300 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span><i class="fa-solid fa-globe mr-1.5 text-brand-500"></i> Global Shipping from Verified AliExpress & Alibaba Suppliers</span>
+            <div class="flex items-center gap-4">
+                <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-brand-900 text-white text-xs border border-brand-700 rounded px-1.5 py-0.5 outline-none cursor-pointer">
+                    <option value="USD">USD ($)</option>
+                    <option value="KES">KES (Ksh)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo.jpg" alt="Silver Stream Goods Logo" class="h-12 w-auto object-contain">
+                <span class="text-xl font-bold tracking-tight text-brand-900 group-hover:text-brand-500 transition">Silver Stream Goods</span>
+            </a>
+
+            <div class="hidden md:flex flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Search products sourced from AliExpress & Alibaba..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2.5 pl-4 pr-10 text-sm focus:outline-none focus:border-brand-500 focus:bg-white transition">
+                    <button class="absolute right-3 top-2.5 text-slate-400 hover:text-brand-500">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative bg-brand-50 hover:bg-brand-100 text-brand-900 p-2.5 rounded-full transition flex items-center gap-2 px-4">
+                    <i class="fa-solid fa-cart-shopping text-brand-500"></i>
+                    <span class="text-sm font-bold" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 text-white overflow-hidden py-16 md:py-24">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30">
+                    <i class="fa-solid fa-bolt"></i> PREMIUM GLOBAL SOURCING
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+                    Smart Goods, Streamed To Your Door.
+                </h1>
+                <p class="text-slate-300 text-base leading-relaxed">
+                    Discover top-tier curated products sourced directly from verified manufacturers on AliExpress, Alibaba, and global partners. Pay flexibly in your preferred currency using M-Pesa, PayPal, Cards, or Skrill.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#catalog" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition">
+                        Shop Collection <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                    </a>
+                    <a href="#payments" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl backdrop-blur transition border border-white/10">
+                        View Payment Options
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-500 to-indigo-500 opacity-30 blur-lg"></div>
+                <div class="relative bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-2xl space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-700 pb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Accepted Gateways</span>
+                        <span class="text-xs text-brand-400 font-medium">Lipa na Mpesa • PayPal • Cards • Skrill</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
+                            <i class="fa-solid fa-mobile-screen-button text-green-500 text-lg"></i>
+                            <div>
+                                <p class="font-bold text-xs">M-Pesa</p>
+                                <p class="text-[10px] text-slate-400">Lipa na Mpesa</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
+                            <i class="fa-brands fa-paypal text-blue-500 text-lg"></i>
+                            <div>
+                                <p class="font-bold text-xs">PayPal</p>
+                                <p class="text-[10px] text-slate-400">Secure Checkout</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
+                            <i class="fa-solid fa-credit-card text-slate-300 text-lg"></i>
+                            <div>
+                                <p class="font-bold text-xs">Cards</p>
+                                <p class="text-[10px] text-slate-400">Visa, Mastercard</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
+                            <i class="fa-solid fa-wallet text-purple-400 text-lg"></i>
+                            <div>
+                                <p class="font-bold text-xs">Skrill</p>
+                                <p class="text-[10px] text-slate-400">Digital Wallet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section (Fully Restored) -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <span class="text-brand-500 font-bold text-xs tracking-wider uppercase">CURATED CATALOG</span>
+                <h2 class="text-3xl font-black text-brand-900 mt-1">Trending Sourced Goods</h2>
+            </div>
+            <p class="text-sm text-slate-500 mt-2 md:mt-0">Direct imports synced with top-rated factory inventory.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                <div>
+                    <div class="relative bg-slate-100 aspect-square overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide z-10">AliExpress Verified</span>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphones" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <span class="text-xs text-slate-400 font-medium">Audio & Tech</span>
+                        <h3 class="font-bold text-slate-900 text-sm line-clamp-1">Active Noise Cancelling Wireless Headphones</h3>
+                        <div class="flex items-center text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-slate-400 ml-1">(4.8)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                    <span class="font-black text-brand-600 text-base price-tag" data-usd="45.00">$45.00</span>
+                    <button onclick="addToCart('Active Noise Cancelling Wireless Headphones', 45.00, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80')" class="bg-brand-50 hover:bg-brand-500 hover:text-white text-brand-600 font-bold px-3.5 py-2 rounded-xl text-xs transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                <div>
+                    <div class="relative bg-slate-100 aspect-square overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide z-10">Alibaba Wholesale</span>
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <span class="text-xs text-slate-400 font-medium">Wearable Tech</span>
+                        <h3 class="font-bold text-slate-900 text-sm line-clamp-1">StreamFit Pro Smartwatch & Fitness Tracker</h3>
+                        <div class="flex items-center text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 ml-1">(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                    <span class="font-black text-brand-600 text-base price-tag" data-usd="65.00">$65.00</span>
+                    <button onclick="addToCart('StreamFit Pro Smartwatch & Fitness Tracker', 65.00, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80')" class="bg-brand-50 hover:bg-brand-500 hover:text-white text-brand-600 font-bold px-3.5 py-2 rounded-xl text-xs transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                <div>
+                    <div class="relative bg-slate-100 aspect-square overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide z-10">AliExpress Direct</span>
+                        <img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500&q=80" alt="Controller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <span class="text-xs text-slate-400 font-medium">Gaming Gadgets</span>
+                        <h3 class="font-bold text-slate-900 text-sm line-clamp-1">Ergonomic Wireless Pro Gaming Controller</h3>
+                        <div class="flex items-center text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <span class="text-slate-400 ml-1">(4.2)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                    <span class="font-black text-brand-600 text-base price-tag" data-usd="32.50">$32.50</span>
+                    <button onclick="addToCart('Ergonomic Wireless Pro Gaming Controller', 32.50, 'https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500&q=80')" class="bg-brand-50 hover:bg-brand-500 hover:text-white text-brand-600 font-bold px-3.5 py-2 rounded-xl text-xs transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                <div>
+                    <div class="relative bg-slate-100 aspect-square overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide z-10">Alibaba Verified</span>
+                        <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=500&q=80" alt="Smart Scale" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <span class="text-xs text-slate-400 font-medium">Health & Home</span>
+                        <h3 class="font-bold text-slate-900 text-sm line-clamp-1">Bluetooth Body Composition Smart Scale</h3>
+                        <div class="flex items-center text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 ml-1">(4.9)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                    <span class="font-black text-brand-600 text-base price-tag" data-usd="28.00">$28.00</span>
+                    <button onclick="addToCart('Bluetooth Body Composition Smart Scale', 28.00, 'https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=500&q=80')" class="bg-brand-50 hover:bg-brand-500 hover:text-white text-brand-600 font-bold px-3.5 py-2 rounded-xl text-xs transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-cart-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Slide-Over Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between p-6">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                        <h2 class="text-lg font-bold text-brand-900"><i class="fa-solid fa-cart-shopping mr-2 text-brand-500"></i> Your Shopping Cart</h2>
+                        <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-700 text-xl font-bold">&times;</button>
+                    </div>
+                    <div id="cartItems" class="py-4 space-y-4 max-h-[35vh] overflow-y-auto">
+                        <p class="text-slate-400 text-sm text-center py-8">Your cart is empty.</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 space-y-4">
+                    <div class="flex justify-between font-bold text-lg text-brand-900">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Select Payment Method</label>
+                        <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+                            <button onclick="selectPayment('mpesa')" id="btn-mpesa" class="p-2.5 border rounded-xl border-slate-200 hover:border-brand-500 flex items-center justify-center gap-1.5 transition payment-option">
+                                <i class="fa-solid fa-mobile text-green-600"></i> Lipa na Mpesa
+                            </button>
+                            <button onclick="selectPayment('paypal')" id="btn-paypal" class="p-2.5 border rounded-xl border-brand-500 bg-brand-50 flex items-center justify-center gap-1.5 transition payment-option">
+                                <i class="fa-brands fa-paypal text-blue-600"></i> PayPal
+                            </button>
+                            <button onclick="selectPayment('card')" id="btn-card" class="p-2.5 border rounded-xl border-slate-200 hover:border-brand-500 flex items-center justify-center gap-1.5 transition payment-option">
+                                <i class="fa-solid fa-credit-card text-slate-700"></i> Card Payment
+                            </button>
+                            <button onclick="selectPayment('skrill')" id="btn-skrill" class="p-2.5 border rounded-xl border-slate-200 hover:border-brand-500 flex items-center justify-center gap-1.5 transition payment-option">
+                                <i class="fa-solid fa-wallet text-purple-600"></i> Skrill Wallet
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="paymentInputs" class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs"></div>
+
+                    <button onclick="checkout()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/20 transition">
+                        Proceed to Secure Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="payments" class="bg-brand-900 text-white pt-12 pb-8 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="logo.jpg" alt="Logo" class="h-8 w-auto object-contain">
+                    <span class="text-lg font-bold tracking-tight">Silver Stream Goods</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Your trusted global dropshipping partner bridging top Chinese wholesale markets (AliExpress & Alibaba) with international buyers.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm tracking-wider uppercase mb-4 text-brand-100">Accepted Currencies</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li>🇺🇸 US Dollar (USD $)</li>
+                    <li>🇰🇪 Kenyan Shilling (KES Ksh)</li>
+                    <li>🇪🇺 Euro (EUR €)</li>
+                    <li>🇬🇧 British Pound (GBP £)</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm tracking-wider uppercase mb-4 text-brand-100">Payment Gateways</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><i class="fa-solid fa-check text-brand-500 mr-1.5"></i> Lipa na Mpesa (Express STK)</li>
+                    <li><i class="fa-solid fa-check text-brand-500 mr-1.5"></i> PayPal Standard / Express</li>
+                    <li><i class="fa-solid fa-check text-brand-500 mr-1.5"></i> Visa & MasterCard Gateways</li>
+                    <li><i class="fa-solid fa-check text-brand-500 mr-1.5"></i> Skrill Digital Wallet</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm tracking-wider uppercase mb-4 text-brand-100">Global Logistics</h4>
+                <p class="text-xs text-slate-400 mb-2">Automated order fulfillment synced directly with suppliers upon payment confirmation.</p>
+                <div class="flex gap-3 text-lg text-slate-300">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-brand-800 pt-6 text-center text-xs text-slate-400">
+            &copy; 2026 Silver Stream Goods. All rights reserved. Built for Global Dropshipping.
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let currentCurrency = 'USD';
+        let currentMethod = 'paypal';
+        const rates = { USD: 1, KES: 130, EUR: 0.92, GBP: 0.79 };
+        const symbols = { USD: '$', KES: 'Ksh ', EUR: '€', GBP: '£' };
+
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('hidden');
+        }
+
+        function addToCart(name, priceUSD, image) {
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ name, priceUSD, image, qty: 1 });
+            }
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCount.textContent = totalQty;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-slate-400 text-sm text-center py-8">Your cart is empty.</p>';
+                cartTotal.textContent = symbols[currentCurrency] + '0.00';
+                return;
+            }
+
+            let html = '';
+            let totalUSD = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotalUSD = item.priceUSD * item.qty;
+                totalUSD += itemTotalUSD;
+                const convertedPrice = (item.priceUSD * rates[currentCurrency]).toFixed(2);
+
+                html += `
+                    <div class="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <img src="${item.image}" class="w-12 h-12 object-cover rounded-lg">
+                        <div class="flex-1 px-3">
+                            <h4 class="font-bold text-xs text-slate-800 line-clamp-1">${item.name}</h4>
+                            <p class="text-xs text-slate-500">${symbols[currentCurrency]}${convertedPrice} x ${item.qty}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = html;
+            cartTotal.textContent = symbols[currentCurrency] + (totalUSD * rates[currentCurrency]).toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function changeCurrency(currency) {
+            currentCurrency = currency;
+            updateCartUI();
+            document.querySelectorAll('.price-tag').forEach(el => {
+                const usdPrice = parseFloat(el.getAttribute('data-usd'));
+                el.textContent = symbols[currentCurrency] + (usdPrice * rates[currentCurrency]).toFixed(2);
+            });
+        }
+
+        function selectPayment(method) {
+            currentMethod = method;
+            document.querySelectorAll('.payment-option').forEach(btn => {
+                btn.classList.remove('border-brand-500', 'bg-brand-50');
+                btn.classList.add('border-slate-200');
+            });
+            const activeBtn = document.getElementById('btn-' + method);
+            activeBtn.classList.remove('border-slate-200');
+            activeBtn.classList.add('border-brand-500', 'bg-brand-50');
+
+            const container = document.getElementById('paymentInputs');
+            if (method === 'mpesa') {
+                container.innerHTML = `
+                    <label class="block font-bold text-slate-700 mb-1">M-Pesa Phone Number (Safaricom)</label>
+                    <div class="flex items-center bg-white border border-slate-300 rounded-lg overflow-hidden">
+                        <span class="px-3 bg-slate-100 text-slate-600 font-bold border-r border-slate-300">+254</span>
+                        <input type="tel" id="mpesaPhone" placeholder="712345678" class="w-full p-2 outline-none">
+                    </div>
+                `;
+            } else if (method === 'card') {
+                container.innerHTML = `
+                    <div class="space-y-2">
+                        <input type="text" placeholder="Card Number (4111 2222...)" class="w-full p-2 bg-white border border-slate-300 rounded-lg outline-none">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="text" placeholder="MM/YY" class="p-2 bg-white border border-slate-300 rounded-lg outline-none">
+                            <input type="text" placeholder="CVV" class="p-2 bg-white border border-slate-300 rounded-lg outline-none">
+                        </div>
+                    </div>
+                `;
+            } else if (method === 'paypal') {
+                container.innerHTML = `<p class="text-slate-600">You will be redirected securely to complete your payment via PayPal Standard / Express.</p>`;
+            } else if (method === 'skrill') {
+                container.innerHTML = `<input type="email" placeholder="Skrill Registered Email" class="w-full p-2 bg-white border border-slate-300 rounded-lg outline-none">`;
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Checkout payload initialized successfully via ' + currentMethod.toUpperCase() + '! Order routed to supplier fulfillment backend.');
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        selectPayment('paypal');
+    </script>
+</body>
+</html>
